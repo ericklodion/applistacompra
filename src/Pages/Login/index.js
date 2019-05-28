@@ -3,6 +3,7 @@ import Input from '../../Components/Input';
 import Button from '../../Components/Button';
 import { login } from '../../Services/authentication'
 import { setToken } from '../../Helpers/authentication'
+import './login.css'
 
 class Login extends Component{
 
@@ -63,19 +64,23 @@ class Login extends Component{
             <div>
                 <form>
                     <Input
+                        label="Email"
                         name="email"
                         type="email"
                         value={email}
                         onChange={this.handleChange}
                     />
                     <Input
+                        label="Senha"
                         name="password"
                         type="password"
                         value={password}
                         onChange={this.handleChange}
                     />
-                    <Button onClick={this.handleClickLogin}>Acessar</Button>
-                    <Button onClick={this.handleClickCreateAccount}>Cadastrar-se</Button>
+                    <div className="actions">
+                        <Button onClick={this.handleClickCreateAccount} className="fs">Cadastrar-se</Button>
+                        <Button onClick={this.handleClickLogin} className="fe">Acessar</Button>
+                    </div>
                 </form>
             </div>
         )

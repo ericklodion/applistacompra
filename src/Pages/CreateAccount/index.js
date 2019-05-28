@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import Input from '../../Components/Input';
 import Button from '../../Components/Button';
 import { createaccount } from '../../Services/authentication'
+import './createAccount.css'
 
 class CreateAccount extends Component{
 
@@ -66,33 +67,37 @@ class CreateAccount extends Component{
     render(){
         const {name, email, password, password2} = this.state
         return (
-            <div>
+            <form>
                 <Input
+                    label="Nome"
                     name="name"
                     type="name"
                     value={name}
                     onChange={this.handleChange}
                 />
                 <Input
+                    label="Email"
                     name="email"
                     type="email"
                     value={email}
                     onChange={this.handleChange}
                 />
                 <Input
+                    label="Senha"
                     name="password"
                     type="password"
                     value={password}
                     onChange={this.handleChange}
                 />
                 <Input
+                    label="Repita a Senha"
                     name="password2"
                     type="password"
                     value={password2}
                     onChange={this.handleChange}
                 />
-                <Button onClick={this.handleClickConfirm}>Confirmar</Button>
-            </div>
+                <Button onClick={this.handleClickConfirm} className="fe">Confirmar</Button>
+            </form>
         )
     }
 

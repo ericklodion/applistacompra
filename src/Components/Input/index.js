@@ -1,11 +1,15 @@
-import React from 'react'
+import React, { Component, Fragment } from 'react'
 import './input.css'
 
 const Input = (props) => {
   return (
-    <input
-      {...props}
-    />
+        <div>
+          <label>{props.label}</label>
+          <input
+            {...props}
+          />
+        </div>
+    
   )
 }
 
