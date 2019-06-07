@@ -1,38 +1,13 @@
-import React, {Component} from 'react'
-import { getCategories } from '../../Services/category'
-import './combobox.css'
+import React from 'react'
+import ReactSelect from 'react-select'
 
-class ComboBox extends Component{
-
-    state = {
-        data: []
-    }
-    
-    async componentDidMount () {
-        try {
-            const response = await getCategories()
-            this.setState({
-                data: response.data
-            })
-        } catch (error) {
-        }
-    }
-
-    render(){
-        const {data} = this.state
-
-        return (
-            <select>{
-                 data.map(item => {
-                    return (
-                        <option value={item.id} key={item.id}>
-                            {item.name}
-                        </option>
-                    )
-                  })}
-            </select>
-        )
-    }
+const ComboBox = (props) => {
+  return (
+    <ReactSelect
+      className='select'
+      {...props}
+    />
+  )
 }
 
 export default ComboBox
